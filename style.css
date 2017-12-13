@@ -1,0 +1,67 @@
+body{
+background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);
+background-repeat: no-repeat;
+background-position: center center;
+background-attachment: fixed;
+background-size: cover;
+
+}
+
+
+h1 {
+	text-align: center;
+	margin: auto 0;
+	color: white;
+	font-size: 50px;
+	margin: 0 auto;
+	padding: 30px;
+	font-weight:900;
+	text-shadow: 0px 0px 3px #000;
+
+}
+
+.buttons {
+	margin: 20px;
+}
+button {
+margin: 5px;
+}
+p{
+	font-weight:900;
+	text-shadow: 0px 0px 3px #000;
+	color:white;
+}
+.athleteButton:hover {
+background-color:#5ac75a;
+border-color:#5ac75a;
+
+}
+
+.newButtonClass:hover {
+	background-color:#5ac75a;
+	border-color:#5ac75a;
+}
+
+
+.btn-outline-primary {
+    color: white;
+    background-image: none;
+    background-color: transparent;
+    border: 2px solid;
+    border-color: white; 
+    text-shadow: 0px 0px 3px #000;
+
+    }
+
+#form-container{
+	margin: 20px;
+	font-weight:900;
+	text-shadow: 0px 0px 3px #000;
+	color:white;
+
+}
+
+#addAthlete:hover{
+	background-color:#5ac75a;
+	border-color:#5ac75a;
+}

@@ -6,7 +6,7 @@ var topics = ['tom brady', 'lebron james', 'kyrie irving', 'payton manning', 'el
 function createButton() {
   for (var i = 0; i < topics.length; i++) {
     var b = $('<button>');
-    b.addClass('btn btn-primary athleteButton');
+    b.addClass('btn btn-outline-primary athleteButton');
     b.attr('data-person', topics[i]);
     b.text(topics[i]);
     $('.buttons').append(b);
@@ -20,7 +20,7 @@ $(document).on('click', '#addAthlete', function(e) {
     $('.athlete-giph').empty();
     athletes = $('#athlete-input').val();
     var b = $('<button>');
-    b.addClass('btn btn-primary newButtonClass');
+    b.addClass('btn btn-outline-primary newButtonClass');
     b.attr('data-person', athletes);
     b.text(athletes);
     $('.buttons').append(b);
@@ -43,10 +43,15 @@ $(document).on('click', '#addAthlete', function(e) {
         var rating =results[i].rating;
         var paragraph = $('<p>').text("Rating: " + rating);
         var personImage=$('<img>');
-        personImage.attr('src', results[i].images.fixed_height.url);
-        gifDiv.prepend(paragraph);
-        gifDiv.prepend(personImage);
-        $('.athlete-giph').prepend(gifDiv);
+        personImage.attr("class","gif");
+            personImage.attr("src", results[i].images.fixed_height_still.url);
+            personImage.attr("data-state","still")
+            personImage.attr("data-still", results[i].images.fixed_height_still.url);
+            personImage.attr("data-animate", results[i].images.fixed_height.url);
+            gifDiv.prepend(paragraph);
+            gifDiv.prepend(personImage);
+
+        $(".athlete-giph").prepend(gifDiv);
       }
     })
 })
