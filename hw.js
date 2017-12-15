@@ -19,14 +19,19 @@ $(document).on('click', '#addAthlete', function(e) {
     e.preventDefault();
     $('.athlete-giph').empty();
     athletes = $('#athlete-input').val();
+    topics.push(athletes);
+    console.log(athletes + ' is pushed into topic array');
+    console.log(topics);
     var b = $('<button>');
-    b.addClass('btn btn-outline-primary newButtonClass');
+    b.addClass('btn btn-outline-primary athleteButton');
+    b.attr('id', 'newButton');
+
     b.attr('data-person', athletes);
     b.text(athletes);
     $('.buttons').append(b);
     
 
-    var person = $('.newButtonClass').attr('data-person');
+    var person = $('#athlete-input').val();
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
         person + "&api_key=dc6zaTOxFJmzC&limit=10";
         console.log("person is " + person);
@@ -56,7 +61,10 @@ $(document).on('click', '#addAthlete', function(e) {
     })
 })
 
-
+//new buttons not working no matter how I try to select them.....
+$('#newButton').on('click', function(){
+  console.log('clicking my new button')
+})
 
 
 
@@ -66,6 +74,8 @@ $("button").on("click", function() {
       var person = $(this).attr("data-person");
       var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
         person + "&api_key=dc6zaTOxFJmzC&limit=10";
+        console.log("person is " + person);
+
 
       $.ajax({
           url: queryURL,
@@ -98,7 +108,7 @@ $("button").on("click", function() {
         });
       //each time a button is clicked the div is emptied and repopulated 
 
-      $('.athletes').empty();
+      $('.athlete-giph').empty();
     });
 
 //Worked once I used document.on click instead of selecting the gif class and adding on click???
